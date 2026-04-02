@@ -1,25 +1,12 @@
 {
   "name": "Shristi Pokharel",
   "title": "Data Leadership Philosophy",
-
   "context": "I see myself as a data leader working at the intersection of technology and healthcare.",
-
   "virtues": [
-    {
-      "title": "Empathy",
-      "description": "Understanding people behind the data."
-    },
-    {
-      "title": "Integrity",
-      "description": "Ensuring ethical and transparent decisions."
-    },
-    {
-      "title": "Humility",
-      "description": "Being open to learning and feedback."
-    }
+    { "title": "Empathy", "description": "Understanding people behind the data." },
+    { "title": "Integrity", "description": "Ensuring ethical and transparent decisions." },
+    { "title": "Humility", "description": "Being open to learning and feedback." }
   ],
-
   "philosophy": "Effective leadership is about enabling others and using data responsibly.",
-
   "impact": "Good leadership builds trust, supports teams, and drives meaningful impact."
 }
