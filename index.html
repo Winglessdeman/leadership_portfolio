@@ -1,1 +1,89 @@
-<h1>Leadership Portfolio</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shristi Pokharel | Leadership Philosophy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <!-- SCRIPT -->
+  <script src="assets/js/script.js"></script>
+
+  <!-- Google Font (clean modern look) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- HERO / HEADER -->
+  <header class="hero">
+    <h1 id="name"></h1>
+    <p id="title"></p>
+  </header>
+
+  <!-- CONTEXT -->
+  <section class="section">
+    <h2>Leadership Context</h2>
+    <p id="context"></p>
+  </section>
+
+  <!-- VIRTUES -->
+  <section class="section">
+    <h2>Core Virtues</h2>
+    <div id="virtues" class="card-container"></div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="section">
+    <h2>Leadership Philosophy</h2>
+    <p id="philosophy"></p>
+  </section>
+
+  <!-- IMPACT -->
+  <section class="section">
+    <h2>Impact on Stakeholders</h2>
+    <p id="impact"></p>
+  </section>
+
+  <!--FOOTER -->
+  <footer>
+    <p>Shristi Pokharel</p>
+  </footer>
+
+  <!--JAVASCRIPT -->
+  <script>
+    fetch("assets/data/content.json")
+      .then(response => response.json())
+      .then(data => {
+
+        // Basic Info
+        document.getElementById("name").textContent = data.name;
+        document.getElementById("title").textContent = data.title;
+        document.getElementById("context").textContent = data.context;
+        document.getElementById("philosophy").textContent = data.philosophy;
+        document.getElementById("impact").textContent = data.impact;
+
+        // Virtues
+        const virtuesContainer = document.getElementById("virtues");
+
+        data.virtues.forEach(v => {
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          card.innerHTML = `
+            <h3>${v.title}</h3>
+            <p>${v.description}</p>
+          `;
+
+          virtuesContainer.appendChild(card);
+        });
+
+      })
+      .catch(error => {
+        console.error("Error loading content:", error);
+      });
+  </script>
+
+</body>
+</html>
