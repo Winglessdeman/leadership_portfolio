@@ -1,102 +1,132 @@
-/*GLOBAL RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* BODY */
+/* GLOBAL */
 body {
+  margin: 0;
   font-family: 'Inter', sans-serif;
-  background-color: #f8f9fb;
-  color: #1a1a1a;
-  line-height: 1.6;
+  background: #f3f4f6; /* light gray background */
+  color: #111;
 }
 
-/*TOP SECTION*/
+/* HERO SECTION (GREEN) */
 .hero {
-  text-align: center;
-  padding: 80px 20px 50px;
-  background: #ffffff;
+  background: linear-gradient(135deg, #022c2c, #014444);
+  color: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 80px;
+  min-height: 90vh;
+}
+
+.hero-text {
+  max-width: 50%;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  font-weight: 600;
+  font-size: 48px;
+  line-height: 1.2;
 }
 
 .hero p {
-  margin-top: 10px;
-  color: #666;
-  font-size: 1.1rem;
-}
-
-/*SECTION */
-.section {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 30px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-/*HEADINGS */
-h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-/*TEXT */
-p {
-  color: #444;
-  font-size: 1rem;
-}
-
-/*VIRTUES CARD CONTAINER */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  opacity: 0.8;
   margin-top: 15px;
 }
 
-/*INDIVIDUAL CARD */
-.card {
-  background: #f5f7fa;
-  padding: 20px;
-  border-radius: 12px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
 }
 
-/*HOVER EFFECT */
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+.buttons button {
+  margin-right: 10px;
+  padding: 12px 22px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-/*FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  margin-top: 40px;
-  color: #777;
-  font-size: 0.9rem;
+.buttons button:first-child {
+  background: white;
+  color: black;
 }
 
-/*SMOOTH FADE-IN */
-.section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+.secondary {
+  background: rgba(255,255,255,0.2);
+  color: white;
 }
 
-.section.show {
+/* IMAGE */
+.hero-image img {
+  width: 280px;
+  border-radius: 20px;
+}
+
+/* MAIN CONTENT */
+main {
+  padding: 60px 20px;
+}
+
+/* WHITE CONTENT CARDS */
+.content-section {
+  background: white;
+  padding: 40px;
+  margin: 40px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* TITLES */
+.content-section h2 {
+  margin-bottom: 15px;
+}
+
+.content-section {
+  transition: all 0.4s ease;
+  opacity: 0.6;
+  transform: scale(0.97);
+}
+
+/* SCROLL ACTIVE */
+.content-section.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
+
+/* HOVER */
+.content-section:hover {
+  opacity: 1;
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+/* TWO COLUMN */
+.two-col {
+  display: flex;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.two-col div {
+  flex: 1;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .two-col {
+    flex-direction: column;
+  }
+}
+
